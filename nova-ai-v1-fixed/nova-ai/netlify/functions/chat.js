@@ -22,8 +22,7 @@ exports.handler = async (event) => {
     const response = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
-      body: JSON.stringify({ model: 'gemini-3.8-flash',, input, system_instruction: SYSTEM_INSTRUCTION, store: false })
-    });
+      body: JSON.stringify({ model: 'gemini-3.8-flash', input, system_instruction: SYSTEM_INSTRUCTION, store: false })
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
       const detail = data?.error?.message || `Gemini API error (${response.status})`;
