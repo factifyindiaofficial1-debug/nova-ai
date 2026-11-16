@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="NOVA AI — ask, learn and create with your AI assistant." />
+  <title>NOVA AI — Your AI, Your World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <div class="brand-mark">✳</div><span>NOVA <b>AI</b></span>
+        <button class="icon-btn mobile-close" id="closeSidebar" aria-label="Close sidebar">×</button>
+      </div>
+      <button class="new-chat" id="newChat"><span>＋</span> New chat</button>
+      <div class="side-label">YOUR CHATS</div>
+      <div class="chat-list" id="chatList"></div>
+      <div class="sidebar-bottom">
+        <div class="profile-dot">N</div>
+        <div class="profile-copy"><b>NOVA AI</b><small>Personal assistant</small></div>
+        <button class="icon-btn" id="clearChats" title="Clear all chats" aria-label="Clear all chats">⌫</button>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="openSidebar" aria-label="Open sidebar">☰</button>
+        <div class="top-brand"><span class="mini-mark">✳</span> NOVA AI <span class="model-pill">AI ASSISTANT</span></div>
+        <button class="top-new" id="topNewChat">＋ <span>New chat</span></button>
+      </header>
+
+      <section class="conversation" id="conversation">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orb">✳</div>
+          <p class="eyebrow">YOUR PERSONAL AI ASSISTANT</p>
+          <h1>What can I help<br><span>you with today?</span></h1>
+          <p class="welcome-sub">Ask anything. Explore ideas. Make something amazing.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain artificial intelligence in simple Hindi."><span>✦</span><b>Learn something</b><small>Explain a topic simply</small></button>
+            <button class="suggestion" data-prompt="Give me 5 creative ideas for a school project."><span>✧</span><b>Get creative</b><small>Brainstorm fresh ideas</small></button>
+            <button class="suggestion" data-prompt="Help me write a professional email asking for information."><span>⌁</span><b>Write something</b><small>Draft and improve text</small></button>
+            <button class="suggestion" data-prompt="Create a simple study timetable for a student."><span>▤</span><b>Study smarter</b><small>Plan and understand</small></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="promptInput" rows="1" maxlength="4000" placeholder="Message NOVA AI..." aria-label="Message NOVA AI"></textarea>
+          <div class="composer-bottom">
+            <span class="input-hint">↵ to send · Shift + ↵ for new line</span>
+            <button class="send-btn" id="sendBtn" type="submit" aria-label="Send message">↑</button>
+          </div>
+        </form>
+        <p class="disclaimer">NOVA AI can make mistakes. Check important information.</p>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
